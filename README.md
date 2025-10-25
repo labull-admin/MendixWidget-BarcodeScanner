@@ -33,7 +33,7 @@ See the widget in action:
 
 ### 1. Download the Widget
 
-Download the latest widget from the [releases page](https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/releases) or use the widget file from the [assets folder](assets/BarcodeScanner-Widget.zip).
+Download the latest widget from the [releases page](https://github.com/labull-admin/MendixWidget-BarcodeScanner/releases/download/1.0.0/labull.BarcodeScanner.mpk) or use the widget file from the [assets folder](assets/BarcodeScanner-Widget.zip).
 
 ### 2. Import into Mendix
 
