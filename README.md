@@ -33,13 +33,13 @@ See the widget in action:
 
 ### 1. Download the Widget
 
-Download the latest widget from the [releases page](https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/releases) or use the widget file from the [assets folder](assets/labull.BarcodeScanner.mpk).
+Download the latest widget from the [releases page](https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/releases) or use the widget file from the [assets folder](assets/BarcodeScanner-Widget.zip).
 
 ### 2. Import into Mendix
 
 1. Open your Mendix project in Studio Pro
 2. Go to **App Store** → **Import Widget**
-3. Select the downloaded `.mpk` file
+3. Select the downloaded `.zip` file (extract the `.mpk` file from the zip if needed)
 4. Click **Import**
 
 ### 3. Add to Your Page
