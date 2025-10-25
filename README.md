@@ -2,7 +2,15 @@
 
 A powerful and flexible barcode scanning widget for Mendix applications that supports both camera scanning and image upload functionality using Dynamsoft Barcode Reader SDK.
 
-**Maintained by 兰博基尼织造**
+**Maintained by Zhejiang Lanbojini Knitting Co.,Ltd.**
+
+**Contact**: xie_Jiahong@labull.org.cn
+
+## 🎥 Demo Video
+
+Watch the widget in action:
+
+https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/assets/demo.mp4
 
 ## 🚀 Features
 
@@ -41,6 +49,8 @@ Download the latest release from the [releases page](https://github.com/YOUR_USE
 3. Drag it onto your page
 
 ## ⚙️ Configuration
+
+![Barcode Scanner Configuration](config.png)
 
 ### Basic Configuration
 
@@ -83,65 +93,6 @@ Download the latest release from the [releases page](https://github.com/YOUR_USE
 - **Action**: Execute when a barcode is successfully detected
 - **Parameters**: 
   - `scannedResult` (String): The decoded barcode text
-
-## 📱 Usage Examples
-
-### Example 1: Basic Camera Scanning
-
-```xml
-<!-- Basic configuration for camera scanning -->
-<BarcodeScanner
-    scannedResultAttribute="ScannedCode"
-    scanMode="single"
-    decodeMode="scan"
-    widthValue="100"
-    heightValue="60"
-    language="english"
-    barcodeTypes="all"
-/>
-```
-
-### Example 2: Image Upload Only
-
-```xml
-<!-- Configuration for image upload only -->
-<BarcodeScanner
-    scannedResultAttribute="ScannedCode"
-    decodeMode="image"
-    widthValue="100"
-    heightValue="40"
-    language="english"
-    barcodeTypes="QR_CODE"
-/>
-```
-
-### Example 3: Continuous Scanning with Custom License
-
-```xml
-<!-- Continuous scanning with custom license -->
-<BarcodeScanner
-    scannedResultAttribute="ScannedCode"
-    scanMode="continuous"
-    decodeMode="both"
-    widthValue="100"
-    heightValue="80"
-    language="english"
-    barcodeTypes="all"
-    licenseKey="YOUR_CUSTOM_LICENSE_KEY"
-    onBarcodeDetected="OnBarcodeScanned"
-/>
-```
-
-### Example 4: Preload Mode for Performance
-
-```xml
-<!-- Preload SDK in background -->
-<BarcodeScanner
-    preloadOnly="true"
-    licenseKey="YOUR_LICENSE_KEY"
-    engineResourcePath="https://your-cdn.com/dynamsoft/"
-/>
-```
 
 ## 🎯 Use Cases
 
@@ -264,6 +215,7 @@ Enable debug logging by opening browser console. The widget provides detailed lo
 
 ## 📞 Support
 
+- **Contact**: xie_Jiahong@labull.org.cn
 - **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/issues)
 - **Documentation**: [Mendix Documentation](https://docs.mendix.com/)
 - **Dynamsoft Support**: [Dynamsoft Documentation](https://www.dynamsoft.com/barcode-reader/docs/)
@@ -283,8 +235,14 @@ Enable debug logging by opening browser console. The widget provides detailed lo
 - [Dynamsoft](https://www.dynamsoft.com/) for providing the excellent barcode scanning SDK
 - [Mendix](https://www.mendix.com/) for the platform and widget development tools
 - Contributors and users who provide feedback and suggestions
-- **兰博基尼织造** for maintaining and supporting this widget
+- **Zhejiang Lanbojini Knitting Co.,Ltd.** for maintaining and supporting this widget
 
 ---
 
-**Made with ❤️ by 兰博基尼织造 for the Mendix community**
+**Made with ❤️ by Zhejiang Lanbojini Knitting Co.,Ltd. for the Mendix community**
+
+**Contact**: xie_Jiahong@labull.org.cn
+
+---
+
+**About Zhejiang Lanbojini Knitting Co.,Ltd.**: Zhejiang Lanbojini Knitting Co.,Ltd. is a professional garment manufacturing enterprise that integrates men's and women's clothing design, production, and service. With 33 years of expertise in the sweater industry, the company has always adhered to the business philosophy of "integrity, cooperation, and mutual benefit." Relying on superb technology, advanced equipment, strict management, and thoughtful after-sales service, every product design strives for perfection and leads fashion trends. The company has an experienced professional measurement team and a complete set of service concepts for various industries, fully reflecting the design philosophy of "working with customers as one." The company always puts "quality first" at the forefront, with a professional quality department controlling every process. "No defective products, only fine products" is our consistent quality philosophy. The company owns more than 1,300 computerized flat knitting machines from Shima Seiki and Cixing, plus over 1,000 advanced equipment including fully automatic ironing machines, dryers, flat sewing machines, overlock machines, linking machines, and buttonhole machines. With approximately 1,200 employees, from a single yarn to a finished garment, we have a complete production chain with significant price advantages and quality assurance.
