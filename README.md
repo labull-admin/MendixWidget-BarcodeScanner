@@ -6,11 +6,11 @@ A powerful and flexible barcode scanning widget for Mendix applications that sup
 
 **Contact**: xie_Jiahong@labull.org.cn
 
-## 🎥 Demo Video
+## 📱 Usage
 
-Watch the widget in action:
+See the widget in action:
 
-https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/assets/demo.mp4
+![Barcode Scanner Usage](usage.png)
 
 ## 🚀 Features
 
