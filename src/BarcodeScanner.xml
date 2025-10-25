@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="labull.barcodescanner.BarcodeScanner"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Barcode Scanner</name>
+    <description>A widget that can read barcodes from camera or uploaded images using Dynamsoft DBR</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <property key="content" type="widgets" required="false">
+                <caption>Content</caption>
+                <description>Content to display above the barcode reader</description>
+            </property>
+            
+            <property key="scannedResultAttribute" type="attribute" required="false">
+                <caption>Scanned Result Attribute</caption>
+                <description>String attribute to store the scanned barcode result</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Barcode Reader">
+            
+            <property key="scanMode" type="enumeration" defaultValue="single">
+                <caption>Scan Mode</caption>
+                <description>Choose how the scanner behaves after scanning a barcode</description>
+                <enumerationValues>
+                    <enumerationValue key="single">Single Scan</enumerationValue>
+                    <enumerationValue key="continuous">Continuous Scan</enumerationValue>
+                </enumerationValues>
+            </property>
+            
+            <property key="decodeMode" type="enumeration" defaultValue="scan">
+                <caption>Decode Mode</caption>
+                <description>Choose which decoding functionality to enable</description>
+                <enumerationValues>
+                    <enumerationValue key="scan">Camera Scan</enumerationValue>
+                    <enumerationValue key="image">Image Upload</enumerationValue>
+                    <enumerationValue key="both">Both Camera and Image Upload</enumerationValue>
+                </enumerationValues>
+            </property>
+            
+            <property key="widthUnit" type="enumeration" defaultValue="percentage">
+                <caption>Width Unit</caption>
+                <description>How to size the scanner width</description>
+                <enumerationValues>
+                    <enumerationValue key="pixels">Pixels</enumerationValue>
+                    <enumerationValue key="percentage">Percentage</enumerationValue>
+                </enumerationValues>
+            </property>
+            
+            <property key="widthValue" type="integer" defaultValue="100">
+                <caption>Width</caption>
+                <description>Width value (pixels or percentage based on Width Unit)</description>
+            </property>
+            
+            <property key="heightUnit" type="enumeration" defaultValue="percentage">
+                <caption>Height Unit</caption>
+                <description>How to size the scanner height</description>
+                <enumerationValues>
+                    <enumerationValue key="pixels">Pixels</enumerationValue>
+                    <enumerationValue key="percentage">Percentage</enumerationValue>
+                </enumerationValues>
+            </property>
+            
+            <property key="heightValue" type="integer" defaultValue="60">
+                <caption>Height</caption>
+                <description>Height value (pixels or percentage based on Height Unit). Percentage height can exceed 100%.</description>
+            </property>
+            
+            <property key="language" type="enumeration" defaultValue="english">
+                <caption>Language</caption>
+                <description>Language for UI text</description>
+                <enumerationValues>
+                    <enumerationValue key="english">English</enumerationValue>
+                    <enumerationValue key="chinese">中文</enumerationValue>
+                </enumerationValues>
+            </property>
+            
+            <property key="barcodeTypes" type="enumeration" defaultValue="all">
+                <caption>Barcode Types</caption>
+                <description>Types of barcodes to detect</description>
+                <enumerationValues>
+                    <enumerationValue key="all">All Types</enumerationValue>
+                    <enumerationValue key="QR_CODE">QR Code</enumerationValue>
+                    <enumerationValue key="CODE_128">Code 128</enumerationValue>
+                    <enumerationValue key="CODE_39">Code 39</enumerationValue>
+                    <enumerationValue key="EAN_13">EAN-13</enumerationValue>
+                    <enumerationValue key="EAN_8">EAN-8</enumerationValue>
+                    <enumerationValue key="UPC_A">UPC-A</enumerationValue>
+                    <enumerationValue key="UPC_E">UPC-E</enumerationValue>
+                    <enumerationValue key="PDF_417">PDF417</enumerationValue>
+                    <enumerationValue key="DATA_MATRIX">Data Matrix</enumerationValue>
+                    <enumerationValue key="AZTEC">Aztec</enumerationValue>
+                </enumerationValues>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Advanced">
+            <!-- Dynamsoft Barcode Reader Version: 9.6.42 -->
+            <property key="preloadOnly" type="boolean" defaultValue="false">
+                <caption>Preload Only</caption>
+                <description>When enabled, only preloads SDK resources without initializing camera or scanner. Useful for preparing resources in background.</description>
+            </property>
+            
+            <property key="licenseKey" type="expression" defaultValue="DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9">
+                <caption>License Key</caption>
+                <description>Dynamsoft license key for barcode reading</description>
+                <returnType type="String" />
+            </property>
+            
+            <property key="engineResourcePath" type="expression" defaultValue="https://unpkg.com/dynamsoft-javascript-barcode@9.6.42/dist/">
+                <caption>Engine Resource Path</caption>
+                <description>URL path to Dynamsoft engine files (WASM, worker files). Default uses UNPKG CDN v9.6.42. You can specify other CDNs or your own hosted files.</description>
+                <returnType type="String" />
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Events">
+            <property key="onBarcodeDetected" type="action" required="false">
+                <caption>On Barcode Detected</caption>
+                <description>Action to execute when a barcode is successfully detected</description>
+                <actionVariables>
+                    <actionVariable key="scannedResult" type="String" caption="Scanned Result" />
+                </actionVariables>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

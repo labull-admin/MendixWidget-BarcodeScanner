@@ -1,0 +1,314 @@
+/* Barcode Reader Styles */
+.barcode-reader {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: fit-content;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.scanner-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-decode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f0f8ff;
+    border-top: 1px solid #b3d9ff;
+}
+
+.video-container {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: #000;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 200px;
+    box-sizing: border-box;
+    display: block; /* Ensure it's always visible */
+}
+
+/* Force square aspect ratio when both width and height are 100% */
+.video-container.square-container {
+    aspect-ratio: 1/1 !important;
+    height: auto !important;
+}
+
+.dce-video-container {
+    /* Dynamsoft will inject video elements here */
+}
+
+.dce-video-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important;
+}
+
+/* Ensure Dynamsoft's video element is visible */
+.dce-video-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 2 !important;
+}
+
+/* Force Dynamsoft UI elements to respect container width */
+.dce-video-container {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+}
+
+/* Mobile-specific fixes for full width camera */
+@media (max-width: 768px) {
+    .scanner-section {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    
+    .camera-container {
+        width: 100% !important;
+        flex: 1 !important;
+    }
+    
+    .video-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .dce-video-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .dce-video-container video {
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .image-decode-container {
+        width: 100% !important;
+        margin-top: 12px !important;
+    }
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 245, 245, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.loading-text {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+.camera-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.placeholder-text {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.scan-info {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.upload-button {
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-width: 150px;
+}
+
+.upload-button:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+.upload-button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.upload-info {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.result-section {
+    padding: 16px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+}
+
+.result-section h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #155724;
+}
+
+.scanned-code {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #155724;
+    background: white;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #c3e6cb;
+    word-break: break-all;
+}
+
+.error-section {
+    padding: 16px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+}
+
+.error-message {
+    color: #721c24;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .barcode-reader {
+        padding: 8px;
+        gap: 12px;
+    }
+    
+    .scanner-section {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .video-container {
+        min-height: 150px;
+        max-height: 50vh;
+    }
+    
+    .scan-info {
+        font-size: 13px;
+    }
+    
+    .loading-text {
+        font-size: 14px;
+    }
+    
+    .upload-button {
+        padding: 10px 20px;
+        font-size: 14px;
+        min-width: 120px;
+    }
+    
+    .upload-info {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .barcode-reader {
+        padding: 4px;
+        gap: 8px;
+    }
+    
+    .scanner-section {
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .video-container {
+        min-height: 120px;
+        max-height: 40vh;
+    }
+    
+    .upload-button {
+        padding: 8px 16px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+}
