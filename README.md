@@ -10,7 +10,7 @@ A powerful and flexible barcode scanning widget for Mendix applications that sup
 
 See the widget in action:
 
-![Barcode Scanner Usage](usage.png)
+![Barcode Scanner Usage](assets/usage.png)
 
 ## 🚀 Features
 
@@ -33,7 +33,7 @@ See the widget in action:
 
 ### 1. Download the Widget
 
-Download the latest release from the [releases page](https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/releases) or clone this repository.
+Download the latest widget from the [releases page](https://github.com/YOUR_USERNAME/MendixWidget-BarcodeScanner/releases) or use the widget file from the [assets folder](assets/labull.BarcodeScanner.mpk).
 
 ### 2. Import into Mendix
 
@@ -50,7 +50,7 @@ Download the latest release from the [releases page](https://github.com/YOUR_USE
 
 ## ⚙️ Configuration
 
-![Barcode Scanner Configuration](config.png)
+![Barcode Scanner Configuration](assets/config.png)
 
 ### Basic Configuration
 
