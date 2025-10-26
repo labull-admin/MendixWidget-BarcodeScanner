@@ -31,22 +31,7 @@ See the widget in action:
 
 ## 🛠️ Installation
 
-### 1. Download the Widget
-
-Download the latest widget from the [releases page](https://github.com/labull-admin/MendixWidget-BarcodeScanner/releases/download/1.0.0/labull.BarcodeScanner.mpk) or use the widget file from the [assets folder](assets/BarcodeScanner-Widget.zip).
-
-### 2. Import into Mendix
-
-1. Open your Mendix project in Studio Pro
-2. Go to **App Store** → **Import Widget**
-3. Select the downloaded `.zip` file (extract the `.mpk` file from the zip if needed)
-4. Click **Import**
-
-### 3. Add to Your Page
-
-1. Open a page in Studio Pro
-2. From the **Toolbox**, find **Barcode Scanner** under **Widgets**
-3. Drag it onto your page
+Simply download and install the widget from the Mendix Marketplace. That's all you need to get started!
 
 ## ⚙️ Configuration
 
@@ -80,7 +65,8 @@ Download the latest widget from the [releases page](https://github.com/labull-ad
 #### Engine Resource Path
 - **Engine Resource Path**: URL to Dynamsoft engine files
   - Default: `https://unpkg.com/dynamsoft-javascript-barcode@9.6.42/dist/`
-  - You can host your own files for better performance
+  - ⚠️ **Important for China Region**: If you are deploying in China, you **MUST** host these engine resources yourself due to internet connection restrictions. The default UNPKG CDN may not be accessible from China.
+  - You can host your own files for better performance or to meet regional requirements
 
 #### Preload Mode
 - **Preload Only**: When enabled, only loads SDK resources without initializing camera
