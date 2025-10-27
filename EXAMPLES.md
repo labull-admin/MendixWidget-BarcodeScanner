@@ -21,7 +21,6 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="60"
-    language="english"
     barcodeTypes="all"
 />
 ```
@@ -34,10 +33,35 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="image"
     widthValue="100"
     heightValue="40"
-    language="english"
+english"
     barcodeTypes="QR_CODE"
 />
 ```
+
+### 3. Customizing UI Text (Translator-Friendly)
+```xml
+<!-- Customize all UI text for multilingual support -->
+<BarcodeScanner
+    scannedResultAttribute="ScannedCode"
+    scanMode="single"
+    decodeMode="scan"
+    widthValue="100"
+    heightValue="60"
+    textPreparingCamera="Preparing camera..."
+    textPointCamera="Point camera at barcode to scan"
+    textCameraReady="Camera ready"
+    textScanCompleted="Scan completed! Click 'Start Again' to scan another barcode."
+    textStartAgain="Start Again"
+    textLoadingSDK="Loading SDK..."
+    textUploadImage="Upload Image"
+    textDecoding="Decoding..."
+    textProcessingImage="Processing image..."
+    textUploadInstruction="Click to upload an image containing a barcode"
+    barcodeTypes="all"
+/>
+```
+
+**Note**: All text properties are optional and use English defaults. These properties are fully translatable in Mendix's translation system, allowing you to provide multilingual support without changing code.
 
 ## Camera Scanning Examples
 
@@ -50,7 +74,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="70"
-    language="english"
+english"
     barcodeTypes="CODE_128"
     onBarcodeDetected="UpdateInventory"
 />
@@ -73,7 +97,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="80"
-    language="english"
+english"
     barcodeTypes="QR_CODE"
     onBarcodeDetected="ProcessCheckIn"
 />
@@ -96,7 +120,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="100"
-    language="english"
+english"
     barcodeTypes="all"
 />
 ```
@@ -111,7 +135,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="image"
     widthValue="100"
     heightValue="50"
-    language="english"
+english"
     barcodeTypes="all"
     onBarcodeDetected="ProcessBatchItem"
 />
@@ -125,7 +149,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="image"
     widthValue="100"
     heightValue="60"
-    language="english"
+english"
     barcodeTypes="PDF_417"
     onBarcodeDetected="ProcessDocument"
 />
@@ -142,7 +166,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="both"
     widthValue="100"
     heightValue="80"
-    language="english"
+english"
     barcodeTypes="all"
     licenseKey="YOUR_CUSTOM_LICENSE_KEY"
     engineResourcePath="https://your-cdn.com/dynamsoft/"
@@ -160,20 +184,31 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
 />
 ```
 
-### Example 3: Chinese Language Support
+### Example 3: Multilingual Support (Chinese)
 ```xml
-<!-- Chinese language interface -->
+<!-- Chinese language interface using translatable text -->
 <BarcodeScanner
-    scannedResultAttribute="扫描结果"
+    scannedResultAttribute="ScannedResult"
     scanMode="single"
     decodeMode="scan"
     widthValue="100"
     heightValue="60"
-    language="chinese"
+    textPreparingCamera="正在准备摄像头..."
+    textPointCamera="将摄像头对准条形码进行扫描"
+    textCameraReady="摄像头已就绪"
+    textScanCompleted="扫描完成！点击'重新开始'扫描另一个条形码。"
+    textStartAgain="重新开始"
+    textLoadingSDK="正在加载SDK..."
+    textUploadImage="上传图片"
+    textDecoding="正在解码..."
+    textProcessingImage="正在处理图片..."
+    textUploadInstruction="点击上传包含条形码的图片"
     barcodeTypes="QR_CODE"
-    onBarcodeDetected="处理扫描结果"
+    onBarcodeDetected="ProcessScanResult"
 />
 ```
+
+**Note**: Text properties can be configured to use Mendix translation constants for true multilingual support.
 
 ## Real-World Use Cases
 
@@ -188,7 +223,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="60"
-    language="english"
+english"
     barcodeTypes="CODE_128"
     onBarcodeDetected="AddToCart"
 />
@@ -211,7 +246,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="both"
     widthValue="100"
     heightValue="70"
-    language="english"
+english"
     barcodeTypes="all"
     onBarcodeDetected="UpdateInventory"
 />
@@ -228,7 +263,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="80"
-    language="english"
+english"
     barcodeTypes="QR_CODE"
     onBarcodeDetected="LoadPatientRecord"
 />
@@ -245,7 +280,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="both"
     widthValue="100"
     heightValue="60"
-    language="english"
+english"
     barcodeTypes="DATA_MATRIX"
     onBarcodeDetected="TrackAsset"
 />
@@ -269,7 +304,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="60"
-    language="english"
+english"
     barcodeTypes="all"
     licenseKey="DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9"
     engineResourcePath="https://unpkg.com/dynamsoft-javascript-barcode@9.6.42/dist/"
@@ -292,7 +327,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="60"
-    language="english"
+english"
     barcodeTypes="QR_CODE"
     licenseKey="YOUR_LICENSE_KEY"
     engineResourcePath="https://your-fast-cdn.com/dynamsoft/"
@@ -315,7 +350,7 @@ This document provides comprehensive examples of how to use the Mendix Barcode S
     decodeMode="scan"
     widthValue="100"
     heightValue="100"
-    language="english"
+english"
     barcodeTypes="QR_CODE"
 />
 ```

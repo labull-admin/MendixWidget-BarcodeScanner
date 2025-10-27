@@ -14,8 +14,6 @@ export type WidthUnitEnum = "pixels" | "percentage";
 
 export type HeightUnitEnum = "pixels" | "percentage";
 
-export type LanguageEnum = "english" | "chinese";
-
 export type BarcodeTypesEnum = "all" | "QR_CODE" | "CODE_128" | "CODE_39" | "EAN_13" | "EAN_8" | "UPC_A" | "UPC_E" | "PDF_417" | "DATA_MATRIX" | "AZTEC";
 
 export interface BarcodeScannerContainerProps {
@@ -31,8 +29,18 @@ export interface BarcodeScannerContainerProps {
     widthValue: number;
     heightUnit: HeightUnitEnum;
     heightValue: number;
-    language: LanguageEnum;
     barcodeTypes: BarcodeTypesEnum;
+    textPreparingCamera?: DynamicValue<string>;
+    textPointCamera?: DynamicValue<string>;
+    textCameraReady?: DynamicValue<string>;
+    textScanningContinuous?: DynamicValue<string>;
+    textScanCompleted?: DynamicValue<string>;
+    textStartAgain?: DynamicValue<string>;
+    textLoadingSDK?: DynamicValue<string>;
+    textUploadImage?: DynamicValue<string>;
+    textDecoding?: DynamicValue<string>;
+    textProcessingImage?: DynamicValue<string>;
+    textUploadInstruction?: DynamicValue<string>;
     preloadOnly: boolean;
     licenseKey: DynamicValue<string>;
     engineResourcePath: DynamicValue<string>;
@@ -58,8 +66,18 @@ export interface BarcodeScannerPreviewProps {
     widthValue: number | null;
     heightUnit: HeightUnitEnum;
     heightValue: number | null;
-    language: LanguageEnum;
     barcodeTypes: BarcodeTypesEnum;
+    textPreparingCamera: string;
+    textPointCamera: string;
+    textCameraReady: string;
+    textScanningContinuous: string;
+    textScanCompleted: string;
+    textStartAgain: string;
+    textLoadingSDK: string;
+    textUploadImage: string;
+    textDecoding: string;
+    textProcessingImage: string;
+    textUploadInstruction: string;
     preloadOnly: boolean;
     licenseKey: string;
     engineResourcePath: string;

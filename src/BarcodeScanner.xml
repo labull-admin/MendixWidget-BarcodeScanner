@@ -77,15 +77,6 @@
                 <description>Height value (pixels or percentage based on Height Unit). When using percentage, height is calculated as aspect ratio based on width (100% = square).</description>
             </property>
             
-            <property key="language" type="enumeration" defaultValue="english">
-                <caption>Language</caption>
-                <description>Language for UI text</description>
-                <enumerationValues>
-                    <enumerationValue key="english">English</enumerationValue>
-                    <enumerationValue key="chinese">中文</enumerationValue>
-                </enumerationValues>
-            </property>
-            
             <property key="barcodeTypes" type="enumeration" defaultValue="all">
                 <caption>Barcode Types</caption>
                 <description>Types of barcodes to detect</description>
@@ -102,6 +93,63 @@
                     <enumerationValue key="DATA_MATRIX">Data Matrix</enumerationValue>
                     <enumerationValue key="AZTEC">Aztec</enumerationValue>
                 </enumerationValues>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Text Custom">
+            <property key="textPreparingCamera" type="textTemplate" required="false">
+                <caption>Preparing Camera Text</caption>
+                <description>Text shown while preparing the camera (translator-friendly). Default: "Preparing camera..."</description>
+            </property>
+            
+            <property key="textPointCamera" type="textTemplate" required="false">
+                <caption>Point Camera Text</caption>
+                <description>Text shown when ready to scan (translator-friendly). Default: "Point camera at barcode to scan"</description>
+            </property>
+            
+            <property key="textCameraReady" type="textTemplate" required="false">
+                <caption>Camera Ready Text</caption>
+                <description>Text shown when camera is ready (translator-friendly). Default: "Camera ready"</description>
+            </property>
+            
+            <property key="textScanningContinuous" type="textTemplate" required="false">
+                <caption>Scanning Continuous Text</caption>
+                <description>Text shown during continuous scanning (translator-friendly). Default: "Scanning continuously... Point camera at barcode"</description>
+            </property>
+            
+            <property key="textScanCompleted" type="textTemplate" required="false">
+                <caption>Scan Completed Text</caption>
+                <description>Text shown after successful scan in single mode (translator-friendly). Default: "Scan completed! Click Start Again to scan another barcode."</description>
+            </property>
+            
+            <property key="textStartAgain" type="textTemplate" required="false">
+                <caption>Start Again Button Text</caption>
+                <description>Text for the restart button (translator-friendly). Default: "Start Again"</description>
+            </property>
+            
+            <property key="textLoadingSDK" type="textTemplate" required="false">
+                <caption>Loading SDK Text</caption>
+                <description>Text shown while SDK is loading (translator-friendly). Default: "Loading SDK..."</description>
+            </property>
+            
+            <property key="textUploadImage" type="textTemplate" required="false">
+                <caption>Upload Image Button Text</caption>
+                <description>Text for the upload button (translator-friendly). Default: "Upload Image"</description>
+            </property>
+            
+            <property key="textDecoding" type="textTemplate" required="false">
+                <caption>Decoding Text</caption>
+                <description>Text shown while decoding image (translator-friendly). Default: "Decoding..."</description>
+            </property>
+            
+            <property key="textProcessingImage" type="textTemplate" required="false">
+                <caption>Processing Image Text</caption>
+                <description>Text shown while processing uploaded image (translator-friendly). Default: "Processing image..."</description>
+            </property>
+            
+            <property key="textUploadInstruction" type="textTemplate" required="false">
+                <caption>Upload Instruction Text</caption>
+                <description>Instruction text for image upload (translator-friendly). Default: "Click to upload an image containing a barcode"</description>
             </property>
         </propertyGroup>
         

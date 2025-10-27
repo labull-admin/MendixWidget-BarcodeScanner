@@ -51,6 +51,10 @@ Simply download and install the widget from the Mendix Marketplace. That's all y
 - **License Key**: Your Dynamsoft license key
   - Default: `DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9` (trial license)
   - Get your own license at [Dynamsoft](https://www.dynamsoft.com/barcode-reader/sdk-javascript/)
+  - ⚠️ **Security Notice**: Since this widget runs client-side, the license key will be visible in the browser. This is standard for client-side SDKs. To protect your license:
+    1. Restrict usage by domain/app in your Dynamsoft console
+    2. Monitor usage for unauthorized access
+    3. Consider Dynamsoft server-side SDK for more sensitive applications
 
 #### Engine Resource Path
 - **Engine Resource Path**: URL to Dynamsoft engine files

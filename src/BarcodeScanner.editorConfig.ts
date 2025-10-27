@@ -105,66 +105,79 @@ export function getProperties(
 ): Properties {
     // If preloadOnly is enabled, hide all properties except license key and engine resource path
     if (values.preloadOnly) {
-        return defaultProperties.map(group => {
-            if (group.caption === "General") {
-                // Hide General group completely when in preload mode
-                return {
-                    ...group,
-                    properties: []
-                };
-            } else if (group.caption === "Barcode Reader") {
-                // Hide Barcode Reader group completely when in preload mode
-                return {
-                    ...group,
-                    properties: []
-                };
-            } else if (group.caption === "Advanced") {
-                // Keep only preloadOnly, licenseKey, and engineResourcePath in Advanced group
-                return {
-                    ...group,
-                    properties: group.properties?.filter(prop => 
-                        prop.key === "preloadOnly" || 
-                        prop.key === "licenseKey" || 
-                        prop.key === "engineResourcePath"
-                    )
-                };
-            } else if (group.caption === "Events") {
-                // Hide Events group completely when in preload mode
-                return {
-                    ...group,
-                    properties: []
-                };
-            }
-            return group;
-        }).filter(group => {
-            // Remove empty groups
-            return group.properties && group.properties.length > 0;
-        });
+        return defaultProperties
+            .map(group => {
+                if (group.caption === "General") {
+                    // Hide General group completely when in preload mode
+                    return {
+                        ...group,
+                        properties: []
+                    };
+                } else if (group.caption === "Barcode Reader") {
+                    // Hide Barcode Reader group completely when in preload mode
+                    return {
+                        ...group,
+                        properties: []
+                    };
+                } else if (group.caption === "Text Custom") {
+                    // Hide Text Custom group completely when in preload mode
+                    return {
+                        ...group,
+                        properties: []
+                    };
+                } else if (group.caption === "Advanced") {
+                    // Keep only preloadOnly, licenseKey, and engineResourcePath in Advanced group
+                    return {
+                        ...group,
+                        properties: group.properties?.filter(
+                            prop =>
+                                prop.key === "preloadOnly" ||
+                                prop.key === "licenseKey" ||
+                                prop.key === "engineResourcePath"
+                        )
+                    };
+                } else if (group.caption === "Events") {
+                    // Hide Events group completely when in preload mode
+                    return {
+                        ...group,
+                        properties: []
+                    };
+                }
+                return group;
+            })
+            .filter(group => {
+                // Remove empty groups
+                return group.properties && group.properties.length > 0;
+            });
     }
-    
+
     return defaultProperties;
 }
 
 export function check(values: BarcodeScannerPreviewProps): Problem[] {
     const errors: Problem[] = [];
-    
+
     // Validate width value based on unit
-    if (values.widthUnit === "percentage" && values.widthValue !== null && (values.widthValue < 1 || values.widthValue > 100)) {
+    if (
+        values.widthUnit === "percentage" &&
+        values.widthValue !== null &&
+        (values.widthValue < 1 || values.widthValue > 100)
+    ) {
         errors.push({
             property: "widthValue",
             message: "Width value must be between 1 and 100 when using percentage unit.",
             severity: "error"
         });
     }
-    
+
     if (values.widthUnit === "pixels" && values.widthValue !== null && values.widthValue < 1) {
         errors.push({
-            property: "widthValue", 
+            property: "widthValue",
             message: "Width value must be at least 1 when using pixels unit.",
             severity: "error"
         });
     }
-    
+
     // Validate height value based on unit
     if (values.heightUnit === "percentage" && values.heightValue !== null && values.heightValue < 1) {
         errors.push({
@@ -173,7 +186,7 @@ export function check(values: BarcodeScannerPreviewProps): Problem[] {
             severity: "error"
         });
     }
-    
+
     if (values.heightUnit === "pixels" && values.heightValue !== null && values.heightValue < 1) {
         errors.push({
             property: "heightValue",
@@ -181,7 +194,7 @@ export function check(values: BarcodeScannerPreviewProps): Problem[] {
             severity: "error"
         });
     }
-    
+
     return errors;
 }
 

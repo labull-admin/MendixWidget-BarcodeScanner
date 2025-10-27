@@ -8,7 +8,6 @@ yarn-error.log*
 dist/
 build/
 *.mpk
-!assets/*.mpk
 
 # IDE files
 .vscode/
@@ -67,8 +66,3 @@ temp/
 # Mendix specific
 deployment/
 widgets/
-
-# Development files
-.eslintrc.js
-.prettierignore
-prettier.config.js

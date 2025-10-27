@@ -1,7 +1,7 @@
 {
   "name": "barcodescanner",
   "widgetName": "BarcodeScanner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dynamsoft Barcode Scanner JS Version",
   "copyright": "兰博基尼织造",
   "author": "Ethan Tse",
