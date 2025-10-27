@@ -1,12 +1,11 @@
 {
   "name": "barcodescanner",
   "widgetName": "BarcodeScanner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dynamsoft Barcode Scanner JS Version",
-  "copyright": "Zhejiang Lanbojini Knitting Co.,Ltd.",
+  "copyright": "兰博基尼织造",
   "author": "Ethan Tse",
-  "maintainer": "Zhejiang Lanbojini Knitting Co.,Ltd.",
-  "contact": "xie_Jiahong@labull.org.cn",
+  "maintainer": "兰博基尼织造",
   "engines": {
     "node": ">=16"
   },

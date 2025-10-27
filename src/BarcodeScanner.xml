@@ -74,7 +74,7 @@
             
             <property key="heightValue" type="integer" defaultValue="60">
                 <caption>Height</caption>
-                <description>Height value (pixels or percentage based on Height Unit). Percentage height can exceed 100%.</description>
+                <description>Height value (pixels or percentage based on Height Unit). When using percentage, height is calculated as aspect ratio based on width (100% = square).</description>
             </property>
             
             <property key="language" type="enumeration" defaultValue="english">
@@ -112,15 +112,15 @@
                 <description>When enabled, only preloads SDK resources without initializing camera or scanner. Useful for preparing resources in background.</description>
             </property>
             
-            <property key="licenseKey" type="expression" defaultValue="DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9">
+            <property key="licenseKey" type="expression" defaultValue="'DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9'">
                 <caption>License Key</caption>
                 <description>Dynamsoft license key for barcode reading</description>
                 <returnType type="String" />
             </property>
             
-            <property key="engineResourcePath" type="expression" defaultValue="https://unpkg.com/dynamsoft-javascript-barcode@9.6.42/dist/">
+            <property key="engineResourcePath" type="expression" defaultValue="'https://unpkg.com/dynamsoft-javascript-barcode@9.6.42/dist/'">
                 <caption>Engine Resource Path</caption>
-                <description>URL path to Dynamsoft engine files (WASM, worker files). Default uses UNPKG CDN v9.6.42. You can specify other CDNs or your own hosted files.</description>
+                <description>URL path to Dynamsoft engine files (WASM, worker files). Default uses UNPKG CDN v9.6.42. Important: If you are in China region, you MUST host these engine resources yourself due to internet connection restrictions. You can specify other CDNs or your own hosted files.</description>
                 <returnType type="String" />
             </property>
         </propertyGroup>
@@ -128,10 +128,7 @@
         <propertyGroup caption="Events">
             <property key="onBarcodeDetected" type="action" required="false">
                 <caption>On Barcode Detected</caption>
-                <description>Action to execute when a barcode is successfully detected</description>
-                <actionVariables>
-                    <actionVariable key="scannedResult" type="String" caption="Scanned Result" />
-                </actionVariables>
+                <description>Action to execute when a barcode is successfully detected. The scanned barcode value will be passed as the context object.</description>
             </property>
         </propertyGroup>
     </properties>

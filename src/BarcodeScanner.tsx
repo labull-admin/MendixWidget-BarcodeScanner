@@ -91,7 +91,7 @@ export function BarcodeScanner({
     };
 
 
-    // Dimension calculation - height percentage can be direct or aspect ratio based
+    // Dimension calculation - height percentage is based on width (aspect ratio)
     const getDimensions = () => {
         const widthStyle: React.CSSProperties = {};
         const heightStyle: React.CSSProperties = {};
@@ -104,18 +104,18 @@ export function BarcodeScanner({
             widthStyle.width = `${widthValue}px`;
         }
 
-        // Calculate height - percentage can exceed 100% and be direct percentage
+        // Calculate height - percentage is based on width (aspect ratio)
         if (heightUnit === 'percentage' && heightValue !== null && heightValue !== undefined) {
-            // Direct percentage - no aspect ratio calculation
-            heightStyle.height = `${heightValue}%`;
+            // Height percentage is calculated as aspect ratio based on width
+            // Only when height is 100%, it becomes square (1:1 aspect ratio)
+            if (heightValue === 100) {
+                className += ' square-container';
+            } else {
+                // For other percentages, use aspect ratio calculation
+                heightStyle.aspectRatio = `${100}/${heightValue}`;
+            }
         } else if (heightUnit === 'pixels' && heightValue !== null && heightValue !== undefined) {
             heightStyle.height = `${heightValue}px`;
-        }
-
-        // Add square-container class if both width and height are 100%
-        if (widthUnit === 'percentage' && heightUnit === 'percentage' && 
-            widthValue === 100 && heightValue === 100) {
-            className += ' square-container';
         }
 
         // Debug logging
@@ -234,7 +234,7 @@ export function BarcodeScanner({
                     }
                     
                     if (onBarcodeDetected && onBarcodeDetected.canExecute) {
-                        onBarcodeDetected.execute({ scannedResult: txt });
+                        onBarcodeDetected.execute();
                     }
                     
                     // Handle scan completion based on continuous scan setting
@@ -349,7 +349,7 @@ export function BarcodeScanner({
                 
                 // Call the onBarcodeDetected callback with the scanned result
                 if (onBarcodeDetected && onBarcodeDetected.canExecute) {
-                    onBarcodeDetected.execute({ scannedResult: decodedText });
+                    onBarcodeDetected.execute();
                 }
             } else {
                 setError(getText(language, 'noBarcodeFound'));

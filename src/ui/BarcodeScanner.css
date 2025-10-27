@@ -60,9 +60,14 @@
     display: block; /* Ensure it's always visible */
 }
 
-/* Force square aspect ratio when both width and height are 100% */
+/* Force square aspect ratio when height is 100% */
 .video-container.square-container {
     aspect-ratio: 1/1 !important;
+    height: auto !important;
+}
+
+/* Support aspect ratio calculation for height percentages */
+.video-container[style*="aspect-ratio"] {
     height: auto !important;
 }
 

@@ -4,7 +4,7 @@
  * @author Mendix Widgets Framework Team
  */
 import { ComponentType, CSSProperties, ReactNode } from "react";
-import { ActionValue, DynamicValue, EditableValue, Option } from "mendix";
+import { ActionValue, DynamicValue, EditableValue } from "mendix";
 
 export type ScanModeEnum = "single" | "continuous";
 
@@ -36,7 +36,7 @@ export interface BarcodeScannerContainerProps {
     preloadOnly: boolean;
     licenseKey: DynamicValue<string>;
     engineResourcePath: DynamicValue<string>;
-    onBarcodeDetected?: ActionValue<{ scannedResult: Option<string> }>;
+    onBarcodeDetected?: ActionValue;
 }
 
 export interface BarcodeScannerPreviewProps {
